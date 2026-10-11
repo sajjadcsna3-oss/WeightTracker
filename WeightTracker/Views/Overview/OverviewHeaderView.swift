@@ -46,6 +46,7 @@ struct OverviewHeaderView: View {
           .background(AppTheme.black)
           .foregroundStyle(.white)
           .clipShape(RoundedRectangle(cornerRadius: 12))
+          .contentShape(Rectangle())
       }
       .buttonStyle(.plain)
     }

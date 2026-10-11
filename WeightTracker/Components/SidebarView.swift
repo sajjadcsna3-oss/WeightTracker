@@ -55,6 +55,7 @@ struct SidebarView: View {
           .foregroundStyle(selected == item.section ? .white : AppTheme.ink.opacity(0.8))
           .background(selected == item.section ? AppTheme.ink : .clear)
           .clipShape(RoundedRectangle(cornerRadius: 10))
+          .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .contentShape(Rectangle())
@@ -92,6 +93,7 @@ struct SidebarView: View {
       .foregroundStyle(mealLensDestination == destination ? Color.white : AppTheme.ink.opacity(0.72))
       .background(mealLensDestination == destination ? AppTheme.ink : Color.clear)
       .clipShape(RoundedRectangle(cornerRadius: 9))
+      .contentShape(Rectangle())
     }.buttonStyle(.plain)
   }
 

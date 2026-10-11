@@ -152,6 +152,7 @@ private struct BlackSwitchStyle: ToggleStyle {
       .frame(width: 39, height: 23)
       .background(configuration.isOn ? AppTheme.ink : Color(red: 0.82, green: 0.81, blue: 0.78))
       .clipShape(Capsule())
+      .contentShape(Rectangle())
     }
     .buttonStyle(.plain)
   }

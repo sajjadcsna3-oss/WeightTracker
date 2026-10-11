@@ -64,6 +64,7 @@ struct OnboardingProfileView: View {
         .background(vm.imperial == imperial ? .white : .clear)
         .clipShape(RoundedRectangle(cornerRadius: 9))
         .foregroundColor(.black)
+        .contentShape(Rectangle())
     }
 
     .buttonStyle(.plain)

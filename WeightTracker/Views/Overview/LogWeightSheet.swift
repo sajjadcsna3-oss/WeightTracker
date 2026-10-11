@@ -87,6 +87,7 @@ struct LogWeightSheet: View {
       } label: {
         Image(systemName: "minus")
           .frame(width: 30, height: 30)
+          .contentShape(Rectangle())
       }
 
       Text(weight, format: .number.precision(.fractionLength(1)))
@@ -98,6 +99,7 @@ struct LogWeightSheet: View {
       } label: {
         Image(systemName: "plus")
           .frame(width: 30, height: 30)
+          .contentShape(Rectangle())
       }
     }
     .buttonStyle(.bordered)

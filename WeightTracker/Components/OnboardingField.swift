@@ -62,6 +62,7 @@ struct OnboardingButton: View {
         .frame(minWidth: style == .lime ? 143 : nil, minHeight: 43)
         .background(style.background)
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .contentShape(Rectangle())
     }
     .buttonStyle(.plain)
   }

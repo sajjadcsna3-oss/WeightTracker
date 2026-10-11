@@ -88,6 +88,7 @@ struct OverviewView: View {
           .padding(.horizontal, 17).frame(height: 39)
           .foregroundStyle(.white).background(AppTheme.ink)
           .clipShape(RoundedRectangle(cornerRadius: 12))
+          .contentShape(Rectangle())
       }.buttonStyle(.plain)
     }
   }

@@ -83,6 +83,7 @@ struct BMIView: View {
         .background(AppTheme.background)
         .clipShape(RoundedRectangle(cornerRadius: 11))
         .overlay(RoundedRectangle(cornerRadius: 11).stroke(AppTheme.stroke))
+        .contentShape(Rectangle())
       }
       .buttonStyle(.plain)
       .accessibilityLabel("Edit height, currently \(Int(height)) centimeters")

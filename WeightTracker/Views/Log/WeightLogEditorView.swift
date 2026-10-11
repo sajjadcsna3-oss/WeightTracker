@@ -48,6 +48,7 @@ struct WeightLogEditorView: View {
                         .frame(width: 28, height: 28)
                         .background(Color.black.opacity(0.06))
                         .clipShape(Circle())
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .keyboardShortcut(.cancelAction)

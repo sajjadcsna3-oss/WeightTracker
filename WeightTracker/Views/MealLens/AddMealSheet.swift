@@ -92,7 +92,17 @@ struct AddMealSheet: View {
   private var portionPicker: some View {
     VStack(alignment: .leading, spacing: 7) {
       Text("Portion").font(.system(size: 11)).foregroundStyle(.secondary)
-      HStack { Button("−") { quantity = max(0.25, quantity - 0.25) }; Spacer(); Text("\(quantity.formatted(.number.precision(.fractionLength(0...2)))) serving"); Spacer(); Button("+") { quantity = min(10, quantity + 0.25) } }
+      HStack {
+        Button { quantity = max(0.25, quantity - 0.25) } label: {
+          Text("−").frame(width: 28, height: 36).contentShape(Rectangle())
+        }
+        Spacer()
+        Text("\(quantity.formatted(.number.precision(.fractionLength(0...2)))) serving")
+        Spacer()
+        Button { quantity = min(10, quantity + 0.25) } label: {
+          Text("+").frame(width: 28, height: 36).contentShape(Rectangle())
+        }
+      }
         .buttonStyle(.plain).padding(.horizontal, 14).frame(height: 36).background(.white, in: RoundedRectangle(cornerRadius: 10)).overlay(RoundedRectangle(cornerRadius: 10).stroke(AppTheme.stroke))
     }.frame(maxWidth: .infinity)
   }

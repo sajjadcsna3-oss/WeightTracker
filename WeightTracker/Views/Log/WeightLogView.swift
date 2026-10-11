@@ -176,6 +176,7 @@ struct WeightLogView: View {
                             .clipShape(
                                 RoundedRectangle(cornerRadius: 9)
                             )
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                 }
@@ -215,6 +216,7 @@ struct WeightLogView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(borderColor, lineWidth: 1)
             }
+            .contentShape(Rectangle())
     }
 
     private var tableHeader: some View {

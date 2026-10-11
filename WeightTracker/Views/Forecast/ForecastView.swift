@@ -191,6 +191,7 @@ struct ForecastView: View {
             RoundedRectangle(cornerRadius: 15)
               .stroke(selectedScenario == scenario ? AppTheme.lime : AppTheme.stroke)
           }
+          .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .accessibilityLabel("\(scenario.title), \(rateText(projectionRate(for: scenario, profile: profile)))")

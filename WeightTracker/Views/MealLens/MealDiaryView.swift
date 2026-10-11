@@ -70,6 +70,7 @@ struct MealDiaryView: View {
               .foregroundStyle(selected ? Color.white : AppTheme.ink)
               .background(selected ? AppTheme.ink : Color.white, in: RoundedRectangle(cornerRadius: 14))
               .overlay(RoundedRectangle(cornerRadius: 14).stroke(AppTheme.stroke))
+              .contentShape(Rectangle())
           }.buttonStyle(.plain)
         }
       }

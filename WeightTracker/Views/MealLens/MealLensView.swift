@@ -101,6 +101,7 @@ struct MealLensView: View {
       Button { choosingImage = true } label: {
         Label(viewModel.image == nil ? "Select image" : "Replace image", systemImage: "photo.badge.plus")
           .frame(maxWidth: .infinity, minHeight: 42)
+          .contentShape(Rectangle())
       }.buttonStyle(.plain).background(.white, in: RoundedRectangle(cornerRadius: 12))
         .overlay(RoundedRectangle(cornerRadius: 12).stroke(style: StrokeStyle(lineWidth: 1, dash: [4])))
     }
@@ -132,6 +133,7 @@ struct MealLensOutlineButtonStyle: ButtonStyle {
     configuration.label.font(.system(size: 12, weight: .medium)).padding(.horizontal, 15).frame(height: 38)
       .background(.white.opacity(configuration.isPressed ? 0.6 : 1), in: RoundedRectangle(cornerRadius: 11))
       .overlay(RoundedRectangle(cornerRadius: 11).stroke(AppTheme.stroke))
+      .contentShape(Rectangle())
   }
 }
 
@@ -140,6 +142,7 @@ struct MealLensPrimaryButtonStyle: ButtonStyle {
     configuration.label.font(.system(size: 12, weight: .semibold)).padding(.horizontal, 17).frame(height: 38)
       .background(AppTheme.violet.opacity(configuration.isPressed ? 0.75 : 1), in: RoundedRectangle(cornerRadius: 11))
       .foregroundStyle(AppTheme.ink)
+      .contentShape(Rectangle())
   }
 }
 
@@ -156,6 +159,7 @@ private struct IngredientPicker: View {
           onSelect(item); dismiss()
         } label: {
           HStack { Text(item.name); Spacer(); Text("\(Int(item.calories)) kcal / 100 g").foregroundStyle(.secondary) }
+            .contentShape(Rectangle())
         }.buttonStyle(.plain)
       }
       Button("Cancel") { dismiss() }.frame(maxWidth: .infinity, alignment: .trailing)

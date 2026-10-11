@@ -101,6 +101,7 @@ struct TrendsView: View {
                         .frame(width: 42, height: 30)
                         .background(range == item ? AppTheme.lime.opacity(0.82) : .clear)
                         .clipShape(RoundedRectangle(cornerRadius: 9))
+                        .contentShape(Rectangle())
                         .buttonStyle(.plain)
                         .accessibilityAddTraits(range == item ? .isSelected : [])
                 }
@@ -142,6 +143,7 @@ struct TrendsView: View {
                                 .frame(width: 16, height: 16)
                                 .padding(2)
                         }
+                        .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .disabled(visibleEntries.isEmpty)

@@ -44,6 +44,7 @@ struct DetectedFoodListView: View {
       Button(action: onAdd) { Label("Add ingredient", systemImage: "plus") }
         .buttonStyle(.plain).font(.system(size: 12, weight: .medium)).foregroundStyle(AppTheme.violet)
         .frame(maxWidth: .infinity, minHeight: 42)
+        .contentShape(Rectangle())
     }
     .background(.white, in: RoundedRectangle(cornerRadius: 18))
     .overlay(RoundedRectangle(cornerRadius: 18).stroke(AppTheme.stroke))

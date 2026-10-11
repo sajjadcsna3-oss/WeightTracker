@@ -93,6 +93,7 @@ struct OnboardingGoalView: View {
             .overlay(
               RoundedRectangle(cornerRadius: 12)
                 .stroke(vm.pace == option.value ? AppTheme.ink : AppTheme.stroke))
+            .contentShape(Rectangle())
           }
           .buttonStyle(.plain)
         }
