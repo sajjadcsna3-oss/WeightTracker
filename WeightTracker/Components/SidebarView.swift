@@ -63,8 +63,8 @@ struct SidebarView: View {
         .padding(.bottom, 2)
         if item.section == .mealLens && selected == .mealLens {
           VStack(spacing: 2) {
-            mealLensSubitem(.scan, icon: "camera")
-            mealLensSubitem(.diary, icon: "book")
+            mealLensSubitem(.scan, systemName: "camera")
+            mealLensSubitem(.diary, assetName: "DairyIcon")
           }
           .padding(.horizontal, 13)
           .padding(.bottom, 4)
@@ -77,13 +77,27 @@ struct SidebarView: View {
     }.frame(width: 212).background(AppTheme.sidebar)
   }
 
-  private func mealLensSubitem(_ destination: MealLensDestination, icon: String) -> some View {
+  private func mealLensSubitem(
+    _ destination: MealLensDestination,
+    assetName: String? = nil,
+    systemName: String? = nil
+  ) -> some View {
     Button {
       selected = .mealLens
       mealLensDestination = destination
     } label: {
       HStack(spacing: 11) {
-        Image(systemName: icon).frame(width: 17)
+        Group {
+          if let assetName {
+            Image(assetName)
+              .renderingMode(.template)
+              .resizable()
+              .scaledToFit()
+          } else if let systemName {
+            Image(systemName: systemName)
+          }
+        }
+        .frame(width: 17, height: 17)
         Text(destination.rawValue)
         Spacer()
       }
