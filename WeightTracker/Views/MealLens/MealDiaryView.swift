@@ -126,11 +126,18 @@ struct MealDiaryView: View {
 
   private var chartPoints: [DailyCaloriePoint] {
     (0..<14).reversed().compactMap { offset in
-      Calendar.current.date(byAdding: .day, value: -offset, to: Calendar.current.startOfDay(for: .now)).map { DailyCaloriePoint(date: $0, calories: viewModel.calories(on: $0, from: meals)) }
+      Calendar.current.date(byAdding: .day, value: -offset, to: Calendar.current.startOfDay(for: .now)).map { day in
+        let dayMeals = viewModel.meals(on: day, from: meals)
+        return DailyCaloriePoint(
+          date: day,
+          calories: dayMeals.reduce(0) { $0 + $1.calories },
+          isRecorded: !dayMeals.isEmpty
+        )
+      }
     }
   }
   private var insightCard: some View {
-    let recorded = chartPoints.filter { $0.calories > 0 }
+    let recorded = chartPoints.filter(\.isRecorded)
     let avg = recorded.isEmpty ? 0 : recorded.map(\.calories).reduce(0,+) / Double(recorded.count)
     return VStack(alignment: .leading, spacing: 9) {
       Label("Nutrition insight", systemImage: "sparkles").font(.system(size: 13, weight: .semibold))
