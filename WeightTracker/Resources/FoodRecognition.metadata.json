@@ -1,0 +1,9 @@
+{
+  "source": "https://huggingface.co/gabrielganan/efficientnet_b1-food101",
+  "license": "Apache-2.0",
+  "classes": 101,
+  "input": [
+    240,
+    240
+  ]
+}
