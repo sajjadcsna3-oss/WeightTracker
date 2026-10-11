@@ -118,7 +118,11 @@ struct SidebarView: View {
   @ViewBuilder
   private func sidebarIcon(_ item: SidebarItem) -> some View {
     if let assetName = item.assetName {
-      Image(assetName)
+      let displayedAssetName = item.section == .mealLens && selected == .mealLens
+        ? "MeallensProIcon"
+        : assetName
+
+      Image(displayedAssetName)
         .renderingMode(.template)
         .resizable()
         .scaledToFit()
